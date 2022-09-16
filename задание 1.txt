@@ -1,0 +1,34 @@
+#include<conio.h>
+#include<stdio.h>
+#include<time.h>
+#include<random>
+#include<locale>
+
+int main() {
+	int mass[10], razz;
+	setlocale(LC_ALL, "RUS");
+	srand(time(NULL));
+	for (int i = 0; i< 10; i++) {
+		mass[i] = rand() % 100;
+		printf("%d ", mass[i]);
+		}
+	printf("\n");
+
+	int minm = mass[0], maxm = mass[0];
+	for (int j = 0; j < 10; j++) {
+		if (mass[j] >maxm) {
+			maxm = mass[j];
+		}
+		if (mass[j] <minm) {
+			minm = mass[j];
+		}
+	}
+	printf("Минимальное число в массиве: %d ", minm);
+	printf("\n");
+	printf("Максимальное число в массиве: %d ", maxm);
+	razz = maxm - minm;
+	printf("\n");
+	printf("Разность: %d ", razz);
+
+	return 0;
+}

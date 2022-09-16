@@ -1,0 +1,23 @@
+#include<conio.h>
+#include<stdio.h>
+#include<time.h>
+#include<random>
+#include<locale>
+#include<malloc.h>
+
+int main() {
+	int *mass, k;
+	setlocale(LC_ALL, "RUS");
+	srand(time(NULL));
+	printf("Размер массива: ");
+	scanf_s("%d", &k);
+	mass = (int*)malloc(k * sizeof(int));
+	printf("Массив: ");
+	for (int i = 0; i< k; i++) {
+		mass[i] = rand() % 100;
+		printf("%d ", mass[i]);
+	}
+	free(mass);
+
+	return 0;
+}
